@@ -1,0 +1,5 @@
+## This script helps you to split fasta/fastq data from qiita.
+#### When users download sequencing data from qiita, the sequencing data of different samples are distributed in different files.
+#### We can use this script to split them and generate a new sequence data file that named by its sample name
+#### Usage: python3 split_to_sample_for_qiita.py inputfile_name
+#### Notes: Because I often use FASTA files, the fourteenth line is 2. If you use fastq, you can modify it appropriately.

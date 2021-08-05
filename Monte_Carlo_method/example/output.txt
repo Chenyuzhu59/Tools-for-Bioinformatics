@@ -1,0 +1,11 @@
+Monte-Carlo test
+Call: procuste.randtest(df1 = pc1, df2 = pc2, nrepet = 10000)
+
+Observation: 0.9156089 
+
+Based on 10000 replicates
+Simulated p-value: 9.999e-05 
+Alternative hypothesis: greater 
+
+    Std.Obs Expectation    Variance 
+ 7.16092000  0.27769428  0.00793574 

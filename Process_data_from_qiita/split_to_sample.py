@@ -1,7 +1,7 @@
 # Author: Yuzhu Chen
 # When users download sequencing data from qiita, the sequencing data of different samples are distributed in different files.
 # We can use this script to split them and generate a new sequence data file that named by its sample name
-# Usage: python3 split_to_sample_for_qiita.py inputfile_name
+# Usage: python3 split_to_sample.py inputfile_name
 # Notes: Because I often use FASTA files, the fourteenth line is 2. If you use fastq, you can modify it appropriately.
 import os
 import sys
@@ -20,7 +20,7 @@ with open(file_name,"r") as fr:
         result[id][seq_id] = lines[i+1]
         
 for id in result:
-    with open(id + ".fna", "w") as fw:
+    with open(id + ".fna", "a") as fw:
         for seq_id in result[id]:
             fw.write(seq_id + "\n")
             fw.write(result[id][seq_id])

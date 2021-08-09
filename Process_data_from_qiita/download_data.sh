@@ -1,3 +1,4 @@
+#!/bin/sh
 # Author: Yuzhu Chen
 # You only need to modify the study_id by your own, then this script will help you download raw data from qiita
 # It is recommended to use on the remote server, the download will be faster.

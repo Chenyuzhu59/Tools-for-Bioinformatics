@@ -4,7 +4,7 @@
 # Call: Rscript RFscore.R -i taxa.abd -m metadata -o outfile
 # R packages used: randomForest ggplot2 RColorBrewer optparse
 # Authors: Yuzhu Chen, Zheng Sun, Xiaoquan Su
-# Last updated at July 29, 2021
+# Last updated at Aug. 21, 2021
 # Updated by Yuzhu Chen
 #################################################################
 # install necessary libraries
@@ -46,7 +46,7 @@ dir.create(outpath)
 
 #------------------------------------------------------------------------------------
 data_matrix <- read.table(matrixfile,header = T, row.names = 1,sep="\t")
-data_map <- read.table(mapfile,header = T, sep="\t")
+data_map <- read.table(mapfile,header = T, sep="\t", as.is=FALSE)
 
 if (min(colSums(data_matrix))==0) {
   data_matrix <- data_matrix[,-which(apply(data_matrix,2,sum)==0)]              #trim 0 cols

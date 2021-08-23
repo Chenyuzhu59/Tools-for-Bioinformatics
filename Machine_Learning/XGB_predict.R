@@ -1,4 +1,5 @@
 # Author: Yuzhu Chen
+# Last updated at Aug. 21, 2021
 # install necessary libraries
 p <- c("xgboost","optparse","Matrix", "data.table")
 usePackage <- function(p) {
@@ -32,7 +33,7 @@ outpath <- opts$out_dir
 dir.create(outpath)
 
 training <- read.table(matrixfile,row.names = 1,header = T,sep = "\t")
-trainingmap <- read.table(mapfile,row.names = 1,header = T,sep = "\t")
+trainingmap <- read.table(mapfile,row.names = 1,header = T,sep = "\t",as.is=FALSE)
 testing <- read.table(testingfile,row.names = 1,header = T,sep = "\t")
 
 setwd(outpath)
@@ -50,7 +51,7 @@ for(j in 1:length(labels)){
        for(k in 1:levels_num){
              if(labels[j]==levels_name[k]) new_labels[j]=k-1
              }
-      } 
+} 
 
 num_thread <- opts$nthread
 num_round <- opts$nround
@@ -63,5 +64,5 @@ for (i in 1:dim(testing)[1]) {
     tempprediction <- predict(training.xb,data.matrix(testing[i,]))
     value_pred[2]<-levels_name[tempprediction+1]
     write.table(file=opts$prefix,t(value_pred),append = T,quote =F,col.names =F, row.names=F, sep="\t")
-    }
+}
 

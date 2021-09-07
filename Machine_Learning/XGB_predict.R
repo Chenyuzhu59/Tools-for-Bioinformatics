@@ -1,4 +1,3 @@
-# Author: Yuzhu Chen
 # Last updated at Aug. 21, 2021
 # install necessary libraries
 p <- c("xgboost","optparse","Matrix", "data.table")
